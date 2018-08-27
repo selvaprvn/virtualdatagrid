@@ -1,5 +1,6 @@
 --compilers ts-node/register
 --require source-map-support/register
+--require jsdom-global/register
 --full-trace
 --bail
 lib/**/*.spec.ts lib/**/*.spec.tsx

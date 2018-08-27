@@ -1,10 +1,10 @@
-import { getTest } from ".";
+import { DataGrid } from ".";
 import { expect } from "chai";
 import "mocha";
 
-describe("Test function", () => {
-  it("should return test world", () => {
-    const result = getTest("world!");
-    expect(result).to.equal("Test : world!");
+describe("DataGrid", () => {
+  it("should create dtagrid", () => {
+    const result = new DataGrid();
+    expect(result).to.not.be.null;
   });
 });
