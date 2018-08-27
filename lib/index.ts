@@ -1,3 +1,3 @@
-import { getTest } from "./grid";
+import { BaseDataGrid as DataGrid } from "./grid";
 
-export { getTest };
+export { DataGrid };

@@ -1,16 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { DataGrid as VDataGrid } from "virtualdatagrid";
 
 class DataGrid extends Component {
+  columns = [
+    {
+      field: "test",
+      header: "Test"
+    },
+    {
+      field: "test1",
+      header: "Test1"
+    }
+  ];
+  constructor(props) {
+    super(props);
+
+    this.gridDiv = null;
+
+    this.setGridRef = element => {
+      this.gridDiv = element;
+    };
+    this.grid = new VDataGrid();
+    this.grid.columns = this.columns;
+  }
+  componentDidMount() {
+    // autofocus the input on mount
+    this.grid.init(this.gridDiv);
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="data-grid" ref={this.setGridRef}>
+        Not Rendered Data {new Date().toISOString()}
       </div>
     );
   }

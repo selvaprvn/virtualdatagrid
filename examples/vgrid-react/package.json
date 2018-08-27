@@ -11,6 +11,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "link-lib:lnx":"cd node_modules && ln -s ../../../dist ./virtualdatagrid",
+    "link-lib:win":"cd node_modules && mklink /d virtualdatagrid ..\\..\\..\\dist"
   }
 }

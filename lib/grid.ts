@@ -9,12 +9,19 @@ export function getTest(str: any): string {
   return `Test : ${str}`;
 }
 
-export class DataGrid {
+class Utils {
+  static createElement(tagName: string): HTMLElement {
+    const elemnet: HTMLElement = document.createElement(tagName);
+    return elemnet;
+  }
+}
+
+export class BaseDataGrid {
   columns: Column[] = [];
 
-  private virtualElement: HTMLDivElement;
+  private virtualElement: HTMLElement;
   constructor() {
-    this.virtualElement = document.createElement("div");
+    this.virtualElement = Utils.createElement("div");
   }
 
   virtualInit() {
@@ -26,6 +33,18 @@ export class DataGrid {
       throw new Error("element to render should be provoided");
     }
     console.log(element);
-    
+    element.innerHTML = "";
+    element.appendChild(this.createColumn());
+  }
+
+  createColumn() {
+    const columnDiv = Utils.createElement("div");
+    this.columns.forEach(col => {
+      const column = Utils.createElement("div");
+      column.innerHTML = col.header;
+      columnDiv.appendChild(column);
+      console.log("column", col);
+    });
+    return columnDiv;
   }
 }
