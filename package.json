@@ -10,8 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://selvaprvn.visualstudio.com/virtualdatagrid/_git/virtualdatagrid"
+    "url": "https://github.com/selvaprvn/virtualdatagrid"
   },
+  "bugs": {
+    "url": "https://github.com/selvaprvn/virtualdatagrid/issues"
+  },
+  "homepage": "https://github.com/selvaprvn/virtualdatagrid#readme",
   "author": "Praveen K",
   "license": "ISC",
   "devDependencies": {
